@@ -35,12 +35,14 @@ namespace TVshowTracker
             TVshowManager.SortShows(); // Sorts TV show list before writing to listbox
             foreach (var item in TVshowManager.TVshows)
             {
-                TVShowBox.Items.Add(string.Format("{0} \n", item.TVname));
+                TVShowBox.Items.Add(string.Format("{0}", item.TVname));
             }
         }
 
-        private void ShowSeasons(int ShowIndex)
+        private void ShowSeasons(string ShowName)
         {
+            int ShowIndex = FindShowIndex(ShowName);
+
             if (TVshowManager.TVshows[ShowIndex].Seasons.Count == 0)
             {
                 EpisodeBox.Items.Add("No seasons available");
@@ -50,23 +52,25 @@ namespace TVshowTracker
             TVshowManager.TVshows[ShowIndex].SortSeasons();
             foreach (var item in TVshowManager.TVshows[ShowIndex].Seasons)
             {
-                EpisodeBox.Items.Add(string.Format("{0} \n", item.SeasonName));
+                EpisodeBox.Items.Add(string.Format("{0}", item.SeasonName));
             }
             IsShowingEpisodes = false;
         }
 
         private void ShowEpisodes(int EpisodeIndex)
         {
-            if (TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[EpisodeIndex].Episodes.Count == 0) // Checks if the season has any episodes in it
+            int ShowIndex = FindShowIndex(TVShowBox.Items[TVShowBox.SelectedIndex].ToString());
+
+            if (TVshowManager.TVshows[ShowIndex].Seasons[EpisodeIndex].Episodes.Count == 0) // Checks if the season has any episodes in it
             {
                 EpisodeBox.Items.Add("No episodes available");
                 IsShowingEpisodes = true;
                 return;
             }
             EpisodeBox.Items.Clear(); // Clears the EpisodeBox
-            foreach (var item in TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[EpisodeIndex].Episodes)
+            foreach (var item in TVshowManager.TVshows[ShowIndex].Seasons[EpisodeIndex].Episodes)
             {
-                EpisodeBox.Items.Add(string.Format("{0} \n", item.EpisodeName));
+                EpisodeBox.Items.Add(string.Format("{0}", item.EpisodeName));
             }
             IsShowingEpisodes = true;
         }
@@ -77,16 +81,17 @@ namespace TVshowTracker
 
         private void TVshows_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = TVShowBox.SelectedIndex;
-            if (index < 0)
+            if (TVShowBox.SelectedIndex < 0)
             {
                 return;
             }
+
+            var index = TVShowBox.Items[TVShowBox.SelectedIndex].ToString();  
             EpisodeBox.Items.Clear();
             ShowSeasons(index);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddShow_Click(object sender, EventArgs e)
         {
             var newform = new AddShowForm();
             Hide();
@@ -132,13 +137,40 @@ namespace TVshowTracker
 
         private void EpisodeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = EpisodeBox.SelectedIndex;
+            var index = EpisodeBox.SelectedIndex;
             if (index < 0 || IsShowingEpisodes)
             {
                 return;
             }
             ShowEpisodes(index);
           
+        }
+
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+            TVShowBox.Items.Clear(); // Clears TVshow listbox
+
+            foreach (var str in TVshowManager.TVshows)
+            {
+                if (str.TVname.ToLower().StartsWith(SearchBox.Text.ToLower()))
+                {
+                    TVShowBox.Items.Add(str.TVname); // Adds to the listbox only strings containing the string value in text box
+                }
+            }
+        }
+
+        private int FindShowIndex(string ShowName)
+        {
+            int ShowIndex = -1;
+            for (int i = 0; i < TVshowManager.TVshows.Count; i++)
+            {
+                if (ShowName == TVshowManager.TVshows[i].TVname)
+                {
+                    ShowIndex = i;
+                    break;
+                }
+            }
+            return ShowIndex;
         }
     }
 }

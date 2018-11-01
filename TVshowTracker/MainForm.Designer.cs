@@ -36,6 +36,8 @@
             this.RemoveEpisode = new System.Windows.Forms.Button();
             this.ShowINFO = new System.Windows.Forms.Button();
             this.MarkedAsWatched = new System.Windows.Forms.Button();
+            this.SearchBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TVShowBox
@@ -81,7 +83,7 @@
             this.AddShow.TabIndex = 2;
             this.AddShow.Text = "Add";
             this.AddShow.UseVisualStyleBackColor = false;
-            this.AddShow.Click += new System.EventHandler(this.button1_Click);
+            this.AddShow.Click += new System.EventHandler(this.AddShow_Click);
             // 
             // RemoveShow
             // 
@@ -159,12 +161,37 @@
             this.MarkedAsWatched.UseVisualStyleBackColor = false;
             this.MarkedAsWatched.Click += new System.EventHandler(this.MarkedAsWatched_Click);
             // 
+            // SearchBox
+            // 
+            this.SearchBox.BackColor = System.Drawing.Color.DarkGray;
+            this.SearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SearchBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.SearchBox.Location = new System.Drawing.Point(419, 39);
+            this.SearchBox.Multiline = true;
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(129, 30);
+            this.SearchBox.TabIndex = 8;
+            this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.label1.Location = new System.Drawing.Point(451, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 21);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Search";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(967, 612);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.MarkedAsWatched);
             this.Controls.Add(this.ShowINFO);
             this.Controls.Add(this.RemoveEpisode);
@@ -179,6 +206,7 @@
             this.Text = "TV show tracker";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -192,6 +220,8 @@
         private System.Windows.Forms.Button RemoveEpisode;
         private System.Windows.Forms.Button ShowINFO;
         private System.Windows.Forms.Button MarkedAsWatched;
+        private System.Windows.Forms.TextBox SearchBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 
