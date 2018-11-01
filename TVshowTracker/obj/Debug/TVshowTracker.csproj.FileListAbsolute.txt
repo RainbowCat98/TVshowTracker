@@ -1,0 +1,12 @@
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\bin\Debug\TVshowTracker.exe.config
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\bin\Debug\TVshowTracker.exe
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\bin\Debug\TVshowTracker.pdb
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.csprojAssemblyReference.cache
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.Properties.Resources.resources
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.csproj.GenerateResource.cache
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.csproj.CoreCompileInputs.cache
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.exe
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.pdb
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.AddShowForm.resources
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.AddEpisodeForm.resources
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.MainForm.resources
