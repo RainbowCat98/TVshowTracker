@@ -14,7 +14,9 @@ namespace TVshowTracker
 {
     public partial class MainForm : Form
     {
-        bool IsShowingEpisodes = false;
+        // Checks if the Episodes are currently displayed on the screen, this is done to prevent Episodes from acting like Seasons and trying to access them.
+        // Also used as a way to make shows with no season from trying to access No seasons message as a season and failing
+        bool IsShowingEpisodes = false; 
 
         public MainForm()
         {
@@ -42,6 +44,7 @@ namespace TVshowTracker
             if (TVshowManager.TVshows[ShowIndex].Seasons.Count == 0)
             {
                 EpisodeBox.Items.Add("No seasons available");
+                IsShowingEpisodes = true;
                 return;
             }
             TVshowManager.TVshows[ShowIndex].SortSeasons();
@@ -54,12 +57,13 @@ namespace TVshowTracker
 
         private void ShowEpisodes(int EpisodeIndex)
         {
-            if (TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[EpisodeIndex].Episodes.Count == 0)
+            if (TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[EpisodeIndex].Episodes.Count == 0) // Checks if the season has any episodes in it
             {
                 EpisodeBox.Items.Add("No episodes available");
+                IsShowingEpisodes = true;
                 return;
             }
-            EpisodeBox.Items.Clear();
+            EpisodeBox.Items.Clear(); // Clears the EpisodeBox
             foreach (var item in TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[EpisodeIndex].Episodes)
             {
                 EpisodeBox.Items.Add(string.Format("{0} \n", item.EpisodeName));
@@ -133,7 +137,6 @@ namespace TVshowTracker
             {
                 return;
             }
-
             ShowEpisodes(index);
           
         }
