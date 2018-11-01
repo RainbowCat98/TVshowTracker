@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TVshowTracker
 {
@@ -43,6 +44,11 @@ namespace TVshowTracker
         /// Contains TV shows seasons with episode information in them
         /// </summary>
         public List<Season> Seasons { get; set; } = new List<Season>();
+
+        public void SortSeasons()
+        {
+            Seasons = Seasons.OrderBy(x => x.SeasonName).ToList();
+        }
 
         public bool ContainsSeason(string seasonsName)
         {

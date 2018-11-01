@@ -32,22 +32,23 @@ namespace TVshowTracker
             {
                 file = File.ReadAllLines(@showfile);
                 lineComponens = file[0].Split(';');
-                TVshowManager.TVshows.Add(new TVShow(lineComponens[0], lineComponens[1], lineComponens[2], lineComponens[3], showfile));
+                TVshowManager.TVshows.Add(new TVShow(lineComponens[0], lineComponens[1], lineComponens[2], lineComponens[3], showfile)); // Adds TV shows information
 
-                for (int i = 1; i < file.Length; i++)
+                for (int i = 1; i < file.Length; i++) // Iterates throuth all episodes
                 {
                     lineComponens = file[i].Split(';');
 
-                    if (TVshowManager.TVshows[ShowNumber].ContainsSeason(lineComponens[0]))
+                    if (TVshowManager.TVshows[ShowNumber].ContainsSeason(lineComponens[0])) // Checks if the TV show conatains a given season
                     {
-                        int SeasonIndex = TVshowManager.TVshows[ShowNumber].GetSeasonIndex(lineComponens[0]);
-                        TVshowManager.TVshows[ShowNumber].Seasons[SeasonIndex].Episodes.Add(new Episode(lineComponens[1], bool.Parse(lineComponens[2])));
+                        int SeasonIndex = TVshowManager.TVshows[ShowNumber].GetSeasonIndex(lineComponens[0]); // Gets specified seasons index
+                        TVshowManager.TVshows[ShowNumber].Seasons[SeasonIndex].Episodes.Add(new Episode(lineComponens[1], bool.Parse(lineComponens[2]))); // Adds an episode to the season
                     }
                     else
                     {
                         TVshowManager.TVshows[ShowNumber].Seasons.Add(new Season(lineComponens[0],new Episode(lineComponens[1],bool.Parse(lineComponens[2]))));
                     }                  
                 }
+                ShowNumber++;
             }
         }
     }
