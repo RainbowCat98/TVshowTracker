@@ -141,6 +141,10 @@ namespace TVshowTracker
             ShowSeasons(TVshowManager.TVshows[TVShowBox.SelectedIndex].TVname);
         }
 
+        /// <summary>
+        /// Rewrites the file according to TVshowManager TV show list
+        /// </summary>
+        /// <param name="TVIndex">TV show that is going to be rewritten</param>
         private void RewriteFile(int TVIndex)
         {
             using (var writeFile = new StreamWriter(TVshowManager.TVshows[TVIndex].FilePath))
