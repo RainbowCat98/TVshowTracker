@@ -22,3 +22,4 @@ C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTrac
 C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.csproj.CoreCompileInputs.cache
 C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.exe
 C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.pdb
+C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.InfoForm.resources
