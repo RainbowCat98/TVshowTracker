@@ -83,8 +83,17 @@ namespace TVshowTracker
             
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void ShowINFO_Click(object sender, EventArgs e)
         {
+            TVshowManager.SelectedShow = TVShowBox.SelectedIndex;
+            var newform = new InfoForm();
+            Hide();
+            newform.ShowDialog();
+            newform.Close();
+
+            TVShowBox.Items.Clear(); // Clears listbox to write updated information
+            ShowTVshows(); // Writes updates show list
+            Show();
         }
 
         private void TVshows_SelectedIndexChanged(object sender, EventArgs e)
@@ -136,6 +145,10 @@ namespace TVshowTracker
 
         private void AddSeason()
         {
+            if (TVShowBox.SelectedIndex < 0)
+            {
+                return;
+            }
             TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons.Add(new Season(TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons.Count + 1));
             EpisodeBox.Items.Clear();
             ShowSeasons(TVshowManager.TVshows[TVShowBox.SelectedIndex].TVname);
@@ -145,7 +158,7 @@ namespace TVshowTracker
         /// Rewrites the file according to TVshowManager TV show list
         /// </summary>
         /// <param name="TVIndex">TV show that is going to be rewritten</param>
-        private void RewriteFile(int TVIndex)
+        public static void RewriteFile(int TVIndex)
         {
             using (var writeFile = new StreamWriter(TVshowManager.TVshows[TVIndex].FilePath))
             {
@@ -181,7 +194,7 @@ namespace TVshowTracker
 
         private void RemoveEpisode_Click(object sender, EventArgs e)
         {
-            if (TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons.Count == 0) // Check if there are any seasons to remove
+            if (TVShowBox.SelectedIndex < 0 || TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons.Count == 0) // Check if there are any seasons to remove
             {
                 return;
             }
@@ -201,7 +214,8 @@ namespace TVshowTracker
             // Removes episodes also REMOVES from file
             else if (IsShowingEpisodes && TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes.Count != 0)
             {
-                TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes.RemoveAt(TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes.Count - 1);
+                var EpisodeIndex = TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes.Count - 1;
+                TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes.RemoveAt(EpisodeIndex);
                 RewriteFile(TVShowBox.SelectedIndex);
 
                 EpisodeBox.Items.Clear();

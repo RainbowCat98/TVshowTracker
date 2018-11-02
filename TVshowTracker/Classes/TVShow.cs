@@ -73,5 +73,15 @@ namespace TVshowTracker
             }
             return -1;
         }
+
+        public int NumberOfEpisodes()
+        {
+            int count = 0;
+            foreach (var season in Seasons)
+            {
+                count += season.Episodes.Count;
+            }
+            return count;
+        }
     }
 }

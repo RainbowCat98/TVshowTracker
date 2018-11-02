@@ -141,9 +141,9 @@
             this.ShowINFO.Name = "ShowINFO";
             this.ShowINFO.Size = new System.Drawing.Size(129, 33);
             this.ShowINFO.TabIndex = 6;
-            this.ShowINFO.Text = "INFO";
+            this.ShowINFO.Text = "INFO / EDIT";
             this.ShowINFO.UseVisualStyleBackColor = false;
-            this.ShowINFO.Click += new System.EventHandler(this.button5_Click);
+            this.ShowINFO.Click += new System.EventHandler(this.ShowINFO_Click);
             // 
             // MarkedAsWatched
             // 
