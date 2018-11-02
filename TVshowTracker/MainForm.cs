@@ -24,6 +24,9 @@ namespace TVshowTracker
             ShowTVshows(); // loads show names to TVshowBox
         }
 
+        /// <summary>
+        /// Prints all TV shows to TV show Box
+        /// </summary>
         private void ShowTVshows()
         {
             TVshowManager.SortShows(); // Sorts TV show list before writing to listbox
@@ -33,6 +36,10 @@ namespace TVshowTracker
             }
         }
 
+        /// <summary>
+        /// Shows all seasons of a specific TV show name
+        /// </summary>
+        /// <param name="ShowName">TV show name</param>
         private void ShowSeasons(string ShowName)
         {
             int ShowIndex = FindShowIndex(ShowName);
@@ -53,6 +60,10 @@ namespace TVshowTracker
             HasSeasons = true;
         }
 
+        /// <summary>
+        /// Shows all episodes of a secified season
+        /// </summary>
+        /// <param name="SeasonIndex">seasons index</param>
         private void ShowEpisodes(int SeasonIndex)
         {
             int ShowIndex = FindShowIndex(TVShowBox.Items[TVShowBox.SelectedIndex].ToString());
@@ -130,6 +141,24 @@ namespace TVshowTracker
             ShowSeasons(TVshowManager.TVshows[TVShowBox.SelectedIndex].TVname);
         }
 
+        private void RewriteFile(int TVIndex)
+        {
+            using (var writeFile = new StreamWriter(TVshowManager.TVshows[TVIndex].FilePath))
+            {
+                var obj = TVshowManager.TVshows[TVIndex];
+
+                writeFile.WriteLine("{0};{1};{2};{3};", obj.TVname, obj.ReleaseDate, obj.EndingDate, obj.Tags);
+
+                for (int i = 0; i < obj.Seasons.Count; i++)
+                {
+                    for (int j = 0; j < obj.Seasons[i].Episodes.Count; j++)
+                    {
+                        writeFile.WriteLine("{0};{1};{2};", obj.Seasons[i].SeasonNumber, obj.Seasons[i].Episodes[j].EpisodeName, obj.Seasons[i].Episodes[j].IsWatched);
+                    }
+                }
+            }
+        }
+
         private void RemoveShow_Click(object sender, EventArgs e)
         {
             if (TVShowBox.SelectedIndex >= 0)
@@ -148,19 +177,33 @@ namespace TVshowTracker
 
         private void RemoveEpisode_Click(object sender, EventArgs e)
         {
-            if (HasSeasons && !IsShowingEpisodes)
+            if (TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons.Count == 0) // Check if there are any seasons to remove
             {
-                TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons.RemoveAt(TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons.Count - 1);
+                return;
+            }
+            // Checks if the show has seasons, is NOT showing episodes 
+            // Removes a season with all content
+            else if (HasSeasons && !IsShowingEpisodes)
+            {
+                int i = TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons.Count - 1;
+               
+                TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons.RemoveAt(i); // Removes LAST season and all its content
+                RewriteFile(TVShowBox.SelectedIndex);
+
+                // Updates Episode box
                 EpisodeBox.Items.Clear();
                 ShowSeasons(TVshowManager.TVshows[TVShowBox.SelectedIndex].TVname);
             }
-            if (IsShowingEpisodes && TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes.Count != 0)
+            // Removes episodes also REMOVES from file
+            else if (IsShowingEpisodes && TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes.Count != 0)
             {
                 TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes.RemoveAt(TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes.Count - 1);
-            }
+                RewriteFile(TVShowBox.SelectedIndex);
 
-            EpisodeBox.Items.Clear();
-            ShowEpisodes(TVshowManager.SelectedSeason);
+                EpisodeBox.Items.Clear();
+                ShowEpisodes(TVshowManager.SelectedSeason);
+            }       
+            
         }
 
         private void EpisodeBox_SelectedIndexChanged(object sender, EventArgs e)

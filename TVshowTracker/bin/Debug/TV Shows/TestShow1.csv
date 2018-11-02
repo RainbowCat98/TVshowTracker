@@ -1,5 +1,4 @@
 The Good Place;2016-01-12;;Adventure;
-1;The Place;false;
-2;The Place;true;
-2;Test;false;
-3;Die;true;
+3;The Place;False;
+4;The Place;True;
+4;Test;False;
