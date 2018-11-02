@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.TVShowBox = new System.Windows.Forms.ListBox();
             this.EpisodeBox = new System.Windows.Forms.ListBox();
             this.AddShow = new System.Windows.Forms.Button();
@@ -201,6 +202,7 @@
             this.Controls.Add(this.EpisodeBox);
             this.Controls.Add(this.TVShowBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TV show tracker";

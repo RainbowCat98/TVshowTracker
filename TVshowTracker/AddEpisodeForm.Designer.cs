@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEpisodeForm));
             this.AddButon = new System.Windows.Forms.Button();
             this.CancelButon = new System.Windows.Forms.Button();
             this.EpisodesNameBox = new System.Windows.Forms.TextBox();
@@ -92,6 +93,7 @@
             this.Controls.Add(this.EpisodesNameBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddEpisodeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Episode";

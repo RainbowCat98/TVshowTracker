@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoForm));
             this.InfoName = new System.Windows.Forms.TextBox();
             this.InfoTags = new System.Windows.Forms.TextBox();
             this.InfoRelease = new System.Windows.Forms.TextBox();
@@ -192,6 +193,7 @@
             this.Controls.Add(this.InfoTags);
             this.Controls.Add(this.InfoName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InfoForm";
