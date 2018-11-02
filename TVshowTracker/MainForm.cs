@@ -154,6 +154,13 @@ namespace TVshowTracker
                 EpisodeBox.Items.Clear();
                 ShowSeasons(TVshowManager.TVshows[TVShowBox.SelectedIndex].TVname);
             }
+            if (IsShowingEpisodes && TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes.Count != 0)
+            {
+                TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes.RemoveAt(TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes.Count - 1);
+            }
+
+            EpisodeBox.Items.Clear();
+            ShowEpisodes(TVshowManager.SelectedSeason);
         }
 
         private void EpisodeBox_SelectedIndexChanged(object sender, EventArgs e)
