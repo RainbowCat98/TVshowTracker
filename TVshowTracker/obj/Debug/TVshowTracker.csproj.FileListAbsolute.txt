@@ -10,3 +10,15 @@ D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Debug\TV
 D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.AddShowForm.resources
 D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.AddEpisodeForm.resources
 D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.MainForm.resources
+C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\bin\Debug\TVshowTracker.exe.config
+C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\bin\Debug\TVshowTracker.exe
+C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\bin\Debug\TVshowTracker.pdb
+C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.csprojAssemblyReference.cache
+C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.AddEpisodeForm.resources
+C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.AddShowForm.resources
+C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.MainForm.resources
+C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.Properties.Resources.resources
+C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.csproj.GenerateResource.cache
+C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.csproj.CoreCompileInputs.cache
+C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.exe
+C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.pdb

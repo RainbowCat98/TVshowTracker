@@ -10,17 +10,21 @@ namespace TVshowTracker
         /// <summary>
         /// Holds seasons name. Used for indentification.
         /// </summary>
-        public string SeasonName { get; set; }
+        public int SeasonNumber { get; set; }
 
         /// <summary>
         /// Holds all episodes of the season
         /// </summary>
         public List<Episode> Episodes { get; set; } = new List<Episode>();
 
-        public Season(string seasonName, Episode episode)
+        public Season(int seasonName, Episode episode)
         {
-            SeasonName = seasonName;
+            SeasonNumber = seasonName;
             Episodes.Add(episode);
+        }
+        public Season(int seasonName)
+        {
+            SeasonNumber = seasonName;
         }
     }
 }

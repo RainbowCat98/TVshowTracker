@@ -38,14 +38,14 @@ namespace TVshowTracker
                 {
                     lineComponens = file[i].Split(';');
 
-                    if (TVshowManager.TVshows[ShowNumber].ContainsSeason(lineComponens[0])) // Checks if the TV show conatains a given season
+                    if (TVshowManager.TVshows[ShowNumber].ContainsSeason(int.Parse(lineComponens[0]))) // Checks if the TV show conatains a given season
                     {
-                        int SeasonIndex = TVshowManager.TVshows[ShowNumber].GetSeasonIndex(lineComponens[0]); // Gets specified seasons index
+                        int SeasonIndex = TVshowManager.TVshows[ShowNumber].GetSeasonIndex(int.Parse(lineComponens[0])); // Gets specified seasons index
                         TVshowManager.TVshows[ShowNumber].Seasons[SeasonIndex].Episodes.Add(new Episode(lineComponens[1], bool.Parse(lineComponens[2]))); // Adds an episode to the season
                     }
                     else
                     {
-                        TVshowManager.TVshows[ShowNumber].Seasons.Add(new Season(lineComponens[0],new Episode(lineComponens[1],bool.Parse(lineComponens[2]))));
+                        TVshowManager.TVshows[ShowNumber].Seasons.Add(new Season(int.Parse(lineComponens[0]),new Episode(lineComponens[1],bool.Parse(lineComponens[2]))));
                     }                  
                 }
                 ShowNumber++;

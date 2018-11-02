@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using TVshowTracker.Classes;
 
 namespace TVshowTracker
 {
@@ -20,7 +14,8 @@ namespace TVshowTracker
 
         private void AddButon_Click(object sender, EventArgs e)
         {
-            
+            TVshowManager.TVshows[TVshowManager.SelectedShow].Seasons[TVshowManager.SelectedSeason].Episodes.Add(new Episode(EpisodesNameBox.Text,WatchedBox.Checked));
+            Close();
         }
 
         private void CancelButon_Click(object sender, EventArgs e)

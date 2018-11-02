@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TVshowTracker.Classes;
 
@@ -16,7 +9,8 @@ namespace TVshowTracker
     {
         // Checks if the Episodes are currently displayed on the screen, this is done to prevent Episodes from acting like Seasons and trying to access them.
         // Also used as a way to make shows with no season from trying to access No seasons message as a season and failing
-        bool IsShowingEpisodes = false; 
+        bool IsShowingEpisodes = false;
+        bool HasSeasons = false;
 
         public MainForm()
         {
@@ -47,32 +41,35 @@ namespace TVshowTracker
             {
                 EpisodeBox.Items.Add("No seasons available");
                 IsShowingEpisodes = true;
+                HasSeasons = false;
                 return;
             }
             TVshowManager.TVshows[ShowIndex].SortSeasons();
             foreach (var item in TVshowManager.TVshows[ShowIndex].Seasons)
             {
-                EpisodeBox.Items.Add(string.Format("{0}", item.SeasonName));
+                EpisodeBox.Items.Add(string.Format("Season {0}", item.SeasonNumber));
             }
             IsShowingEpisodes = false;
+            HasSeasons = true;
         }
 
-        private void ShowEpisodes(int EpisodeIndex)
+        private void ShowEpisodes(int SeasonIndex)
         {
             int ShowIndex = FindShowIndex(TVShowBox.Items[TVShowBox.SelectedIndex].ToString());
 
-            if (TVshowManager.TVshows[ShowIndex].Seasons[EpisodeIndex].Episodes.Count == 0) // Checks if the season has any episodes in it
+            if (TVshowManager.TVshows[ShowIndex].Seasons[SeasonIndex].Episodes.Count == 0) // Checks if the season has any episodes in it
             {
                 EpisodeBox.Items.Add("No episodes available");
                 IsShowingEpisodes = true;
                 return;
             }
             EpisodeBox.Items.Clear(); // Clears the EpisodeBox
-            foreach (var item in TVshowManager.TVshows[ShowIndex].Seasons[EpisodeIndex].Episodes)
+            foreach (var item in TVshowManager.TVshows[ShowIndex].Seasons[SeasonIndex].Episodes)
             {
                 EpisodeBox.Items.Add(string.Format("{0}", item.EpisodeName));
             }
             IsShowingEpisodes = true;
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -105,13 +102,32 @@ namespace TVshowTracker
 
         private void AddEpisode_Click(object sender, EventArgs e)
         {
-            var newform = new AddEpisodeForm();
-            Hide();
-            newform.ShowDialog();
-            newform.Close();       
-            Show();
+            if (IsShowingEpisodes && HasSeasons)
+            {
+                TVshowManager.SelectedShow = TVShowBox.SelectedIndex;
+                var newform = new AddEpisodeForm();
+                Hide();
+                newform.ShowDialog();
+                newform.Close();
 
+                EpisodeBox.Items.Clear();
+                ShowEpisodes(TVshowManager.SelectedSeason);
+                Show();
+
+
+            }
+            else
+            {
+                AddSeason();
+            }
            
+        }
+
+        private void AddSeason()
+        {
+            TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons.Add(new Season(TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons.Count + 1));
+            EpisodeBox.Items.Clear();
+            ShowSeasons(TVshowManager.TVshows[TVShowBox.SelectedIndex].TVname);
         }
 
         private void RemoveShow_Click(object sender, EventArgs e)
@@ -132,7 +148,12 @@ namespace TVshowTracker
 
         private void RemoveEpisode_Click(object sender, EventArgs e)
         {
-
+            if (HasSeasons && !IsShowingEpisodes)
+            {
+                TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons.RemoveAt(TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons.Count - 1);
+                EpisodeBox.Items.Clear();
+                ShowSeasons(TVshowManager.TVshows[TVShowBox.SelectedIndex].TVname);
+            }
         }
 
         private void EpisodeBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -142,6 +163,11 @@ namespace TVshowTracker
             {
                 return;
             }
+            else if (index >= 0 && !IsShowingEpisodes)
+            {
+                TVshowManager.SelectedSeason = EpisodeBox.SelectedIndex;
+            }
+            EpisodeBox.Items.Clear();
             ShowEpisodes(index);
           
         }

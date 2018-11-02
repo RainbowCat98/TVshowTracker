@@ -47,14 +47,14 @@ namespace TVshowTracker
 
         public void SortSeasons()
         {
-            Seasons = Seasons.OrderBy(x => x.SeasonName).ToList();
+            Seasons = Seasons.OrderBy(x => x.SeasonNumber).ToList();
         }
 
-        public bool ContainsSeason(string seasonsName)
+        public bool ContainsSeason(int seasonsName)
         {
             foreach (var season in Seasons)
             {
-                if (season.SeasonName == seasonsName)
+                if (season.SeasonNumber == seasonsName)
                 {
                     return true;
                 }
@@ -62,11 +62,11 @@ namespace TVshowTracker
             return false;
         }
 
-        public int GetSeasonIndex(string seasonName)
+        public int GetSeasonIndex(int seasonName)
         {
             for (int i = 0; i < Seasons.Count; i++)
             {
-                if (Seasons[i].SeasonName == seasonName)
+                if (Seasons[i].SeasonNumber == seasonName)
                 {
                     return i;
                 }
