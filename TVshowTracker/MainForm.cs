@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using TVshowTracker.Classes;
@@ -250,14 +251,15 @@ namespace TVshowTracker
         private void SearchBox_TextChanged(object sender, EventArgs e)
         {
             TVShowBox.Items.Clear(); // Clears TVshow listbox
+            EpisodeBox.Items.Clear();
 
             foreach (var str in TVshowManager.TVshows)
             {
-                if (str.TVname.ToLower().StartsWith(SearchBox.Text.ToLower()))
+                if (str.TVname.ToLower().Contains(SearchBox.Text.ToLower()))
                 {
                     TVShowBox.Items.Add(str.TVname); // Adds to the listbox only strings containing the string value in text box
                 }
-            }
+            }      
         }
 
         private int FindShowIndex(string ShowName)

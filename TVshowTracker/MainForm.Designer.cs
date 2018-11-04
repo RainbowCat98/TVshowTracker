@@ -45,15 +45,16 @@
             // 
             this.TVShowBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.TVShowBox.BackColor = System.Drawing.SystemColors.Window;
-            this.TVShowBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TVShowBox.BackColor = System.Drawing.Color.Black;
+            this.TVShowBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TVShowBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.TVShowBox.ForeColor = System.Drawing.SystemColors.Window;
             this.TVShowBox.FormattingEnabled = true;
             this.TVShowBox.ItemHeight = 23;
             this.TVShowBox.Location = new System.Drawing.Point(12, 12);
             this.TVShowBox.Name = "TVShowBox";
             this.TVShowBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TVShowBox.Size = new System.Drawing.Size(401, 416);
+            this.TVShowBox.Size = new System.Drawing.Size(401, 391);
             this.TVShowBox.TabIndex = 0;
             this.TVShowBox.SelectedIndexChanged += new System.EventHandler(this.TVshows_SelectedIndexChanged);
             // 
@@ -62,22 +63,25 @@
             this.EpisodeBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EpisodeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EpisodeBox.BackColor = System.Drawing.Color.Black;
+            this.EpisodeBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EpisodeBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.EpisodeBox.ForeColor = System.Drawing.SystemColors.Window;
             this.EpisodeBox.FormattingEnabled = true;
             this.EpisodeBox.ItemHeight = 23;
             this.EpisodeBox.Location = new System.Drawing.Point(554, 12);
             this.EpisodeBox.Name = "EpisodeBox";
-            this.EpisodeBox.Size = new System.Drawing.Size(401, 416);
+            this.EpisodeBox.Size = new System.Drawing.Size(401, 391);
             this.EpisodeBox.TabIndex = 1;
             this.EpisodeBox.SelectedIndexChanged += new System.EventHandler(this.EpisodeBox_SelectedIndexChanged);
             // 
             // AddShow
             // 
             this.AddShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AddShow.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.AddShow.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.AddShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.AddShow.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.AddShow.Location = new System.Drawing.Point(12, 465);
             this.AddShow.Name = "AddShow";
             this.AddShow.Size = new System.Drawing.Size(118, 32);
@@ -89,9 +93,10 @@
             // RemoveShow
             // 
             this.RemoveShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.RemoveShow.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.RemoveShow.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.RemoveShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.RemoveShow.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.RemoveShow.Location = new System.Drawing.Point(295, 465);
             this.RemoveShow.Name = "RemoveShow";
             this.RemoveShow.Size = new System.Drawing.Size(118, 32);
@@ -105,9 +110,10 @@
             this.AddEpisode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddEpisode.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.AddEpisode.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.AddEpisode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddEpisode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.AddEpisode.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.AddEpisode.Location = new System.Drawing.Point(554, 465);
             this.AddEpisode.Name = "AddEpisode";
             this.AddEpisode.Size = new System.Drawing.Size(81, 37);
@@ -121,9 +127,10 @@
             this.RemoveEpisode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RemoveEpisode.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.RemoveEpisode.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.RemoveEpisode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveEpisode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.RemoveEpisode.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.RemoveEpisode.Location = new System.Drawing.Point(874, 465);
             this.RemoveEpisode.Name = "RemoveEpisode";
             this.RemoveEpisode.Size = new System.Drawing.Size(81, 37);
@@ -135,9 +142,10 @@
             // ShowINFO
             // 
             this.ShowINFO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ShowINFO.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ShowINFO.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ShowINFO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShowINFO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.ShowINFO.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.ShowINFO.Location = new System.Drawing.Point(149, 465);
             this.ShowINFO.Name = "ShowINFO";
             this.ShowINFO.Size = new System.Drawing.Size(129, 33);
@@ -151,9 +159,10 @@
             this.MarkedAsWatched.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MarkedAsWatched.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.MarkedAsWatched.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.MarkedAsWatched.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MarkedAsWatched.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.MarkedAsWatched.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.MarkedAsWatched.Location = new System.Drawing.Point(660, 465);
             this.MarkedAsWatched.Name = "MarkedAsWatched";
             this.MarkedAsWatched.Size = new System.Drawing.Size(193, 37);
@@ -164,7 +173,7 @@
             // 
             // SearchBox
             // 
-            this.SearchBox.BackColor = System.Drawing.Color.DarkGray;
+            this.SearchBox.BackColor = System.Drawing.Color.White;
             this.SearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SearchBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.SearchBox.Location = new System.Drawing.Point(419, 39);
@@ -189,7 +198,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(967, 612);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SearchBox);
@@ -201,6 +210,7 @@
             this.Controls.Add(this.AddShow);
             this.Controls.Add(this.EpisodeBox);
             this.Controls.Add(this.TVShowBox);
+            this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
