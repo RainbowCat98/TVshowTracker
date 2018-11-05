@@ -12,6 +12,7 @@ namespace TVshowTracker
         // Also used as a way to make shows with no season from trying to access No seasons message as a season and failing
         bool IsShowingEpisodes = false;
         bool HasSeasons = false;
+        bool HasEpisodes = false;
 
         public MainForm()
         {
@@ -74,16 +75,26 @@ namespace TVshowTracker
             if (TVshowManager.TVshows[ShowIndex].Seasons[SeasonIndex].Episodes.Count == 0) // Checks if the season has any episodes in it
             {
                 EpisodeBox.Items.Add("No episodes available");
+                HasEpisodes = false;
                 IsShowingEpisodes = true;
                 return;
             }
             EpisodeBox.Items.Clear(); // Clears the EpisodeBox
             foreach (var item in TVshowManager.TVshows[ShowIndex].Seasons[SeasonIndex].Episodes)
             {
-                EpisodeBox.Items.Add(string.Format("{0}", item.EpisodeName));
+                if (item.IsWatched == true)
+                {
+                    EpisodeBox.Items.Add(string.Format("[Watched]-{0}", item.EpisodeName));
+                }
+                else
+                {
+                    EpisodeBox.Items.Add(string.Format("{0}", item.EpisodeName));
+                }
+ 
+                
             }
             IsShowingEpisodes = true;
-            
+            HasEpisodes = true;
         }
 
         private void ShowINFO_Click(object sender, EventArgs e)
@@ -196,7 +207,22 @@ namespace TVshowTracker
 
         private void MarkedAsWatched_Click(object sender, EventArgs e)
         {
-
+            
+            if (EpisodeBox.SelectedIndex < 0 || !HasSeasons || !HasEpisodes)
+            {
+                return;
+            }
+            var Watched = TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes[EpisodeBox.SelectedIndex].IsWatched;
+            if (IsShowingEpisodes && HasSeasons && !Watched)
+            {
+                TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes[EpisodeBox.SelectedIndex].IsWatched = true;
+            }
+            else if(IsShowingEpisodes && HasSeasons && Watched)
+            {
+                TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes[EpisodeBox.SelectedIndex].IsWatched = false;
+            }
+            ShowEpisodes(TVshowManager.SelectedSeason);
+            RewriteFile(TVShowBox.SelectedIndex);
         }
 
         private void RemoveEpisode_Click(object sender, EventArgs e)
@@ -220,7 +246,7 @@ namespace TVshowTracker
                 ShowSeasons(TVshow.TVname);
             }
             // Removes episodes also REMOVES from file
-            else if (IsShowingEpisodes && TVshow.Seasons[TVshowManager.SelectedSeason].Episodes.Count != 0 && EpisodeBox.SelectedIndex < 0)
+            else if (IsShowingEpisodes && HasEpisodes && EpisodeBox.SelectedIndex < 0)
             {
                 var EpisodeIndex = TVshow.Seasons[TVshowManager.SelectedSeason].Episodes.Count - 1;
                 TVshow.Seasons[TVshowManager.SelectedSeason].Episodes.RemoveAt(EpisodeIndex);
@@ -228,7 +254,7 @@ namespace TVshowTracker
 
                 ShowEpisodes(TVshowManager.SelectedSeason);
             }       
-            else if (IsShowingEpisodes && EpisodeBox.SelectedIndex >= 0 && HasSeasons && TVshow.Seasons[TVshowManager.SelectedSeason].Episodes.Count != 0)
+            else if (IsShowingEpisodes && EpisodeBox.SelectedIndex >= 0 && HasSeasons && HasEpisodes)
             {
                 TVshow.Seasons[TVshowManager.SelectedSeason].Episodes.RemoveAt(EpisodeBox.SelectedIndex);
                 ShowEpisodes(TVshowManager.SelectedSeason);

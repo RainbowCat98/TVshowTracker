@@ -36,3 +36,4 @@ C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.cspro
 C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.csproj.CoreCompileInputs.cache
 C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.exe
 C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.pdb
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.InfoForm.resources

@@ -47,14 +47,14 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.TVShowBox.BackColor = System.Drawing.Color.Black;
             this.TVShowBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TVShowBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.TVShowBox.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.TVShowBox.ForeColor = System.Drawing.SystemColors.Window;
             this.TVShowBox.FormattingEnabled = true;
-            this.TVShowBox.ItemHeight = 23;
-            this.TVShowBox.Location = new System.Drawing.Point(12, 12);
+            this.TVShowBox.ItemHeight = 27;
+            this.TVShowBox.Location = new System.Drawing.Point(8, 12);
             this.TVShowBox.Name = "TVShowBox";
             this.TVShowBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TVShowBox.Size = new System.Drawing.Size(401, 391);
+            this.TVShowBox.Size = new System.Drawing.Size(401, 513);
             this.TVShowBox.TabIndex = 0;
             this.TVShowBox.SelectedIndexChanged += new System.EventHandler(this.TVshows_SelectedIndexChanged);
             // 
@@ -65,13 +65,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EpisodeBox.BackColor = System.Drawing.Color.Black;
             this.EpisodeBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.EpisodeBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.EpisodeBox.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.EpisodeBox.ForeColor = System.Drawing.SystemColors.Window;
             this.EpisodeBox.FormattingEnabled = true;
-            this.EpisodeBox.ItemHeight = 23;
-            this.EpisodeBox.Location = new System.Drawing.Point(554, 12);
+            this.EpisodeBox.ItemHeight = 27;
+            this.EpisodeBox.Location = new System.Drawing.Point(550, 12);
             this.EpisodeBox.Name = "EpisodeBox";
-            this.EpisodeBox.Size = new System.Drawing.Size(401, 391);
+            this.EpisodeBox.Size = new System.Drawing.Size(401, 513);
             this.EpisodeBox.TabIndex = 1;
             this.EpisodeBox.SelectedIndexChanged += new System.EventHandler(this.EpisodeBox_SelectedIndexChanged);
             // 
@@ -82,7 +82,7 @@
             this.AddShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.AddShow.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.AddShow.Location = new System.Drawing.Point(12, 465);
+            this.AddShow.Location = new System.Drawing.Point(8, 563);
             this.AddShow.Name = "AddShow";
             this.AddShow.Size = new System.Drawing.Size(118, 32);
             this.AddShow.TabIndex = 2;
@@ -97,7 +97,7 @@
             this.RemoveShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.RemoveShow.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.RemoveShow.Location = new System.Drawing.Point(295, 465);
+            this.RemoveShow.Location = new System.Drawing.Point(291, 563);
             this.RemoveShow.Name = "RemoveShow";
             this.RemoveShow.Size = new System.Drawing.Size(118, 32);
             this.RemoveShow.TabIndex = 3;
@@ -114,7 +114,7 @@
             this.AddEpisode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddEpisode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.AddEpisode.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.AddEpisode.Location = new System.Drawing.Point(554, 465);
+            this.AddEpisode.Location = new System.Drawing.Point(550, 563);
             this.AddEpisode.Name = "AddEpisode";
             this.AddEpisode.Size = new System.Drawing.Size(81, 37);
             this.AddEpisode.TabIndex = 4;
@@ -131,7 +131,7 @@
             this.RemoveEpisode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveEpisode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.RemoveEpisode.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.RemoveEpisode.Location = new System.Drawing.Point(874, 465);
+            this.RemoveEpisode.Location = new System.Drawing.Point(870, 563);
             this.RemoveEpisode.Name = "RemoveEpisode";
             this.RemoveEpisode.Size = new System.Drawing.Size(81, 37);
             this.RemoveEpisode.TabIndex = 5;
@@ -146,7 +146,7 @@
             this.ShowINFO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShowINFO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.ShowINFO.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ShowINFO.Location = new System.Drawing.Point(149, 465);
+            this.ShowINFO.Location = new System.Drawing.Point(145, 563);
             this.ShowINFO.Name = "ShowINFO";
             this.ShowINFO.Size = new System.Drawing.Size(129, 33);
             this.ShowINFO.TabIndex = 6;
@@ -163,7 +163,7 @@
             this.MarkedAsWatched.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MarkedAsWatched.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.MarkedAsWatched.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.MarkedAsWatched.Location = new System.Drawing.Point(660, 465);
+            this.MarkedAsWatched.Location = new System.Drawing.Point(656, 563);
             this.MarkedAsWatched.Name = "MarkedAsWatched";
             this.MarkedAsWatched.Size = new System.Drawing.Size(193, 37);
             this.MarkedAsWatched.TabIndex = 7;
