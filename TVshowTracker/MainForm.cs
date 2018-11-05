@@ -201,23 +201,32 @@ namespace TVshowTracker
                 File.Delete(TVshowManager.TVshows[TVShowBox.SelectedIndex].FilePath); // Deletes show's file in "TV shows" folder
                 TVshowManager.TVshows.RemoveAt(TVShowBox.SelectedIndex); // Removes selected item in listbox from TvshowManager
                 TVShowBox.Items.Clear(); // Clears listbox
+                EpisodeBox.Items.Clear();
                 ShowTVshows(); // Writes updates show list
+               
             }        
         }
 
         private void MarkedAsWatched_Click(object sender, EventArgs e)
         {
             
-            if (EpisodeBox.SelectedIndex < 0 || !HasSeasons || !HasEpisodes)
+            if (!HasSeasons || !HasEpisodes)
             {
                 return;
             }
-            var Watched = TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes[EpisodeBox.SelectedIndex].IsWatched;
-            if (IsShowingEpisodes && HasSeasons && !Watched)
+
+            if (EpisodeBox.SelectedIndex < 0 && HasSeasons && HasEpisodes)
+            {
+                foreach (var episode in TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes)
+                {
+                    episode.IsWatched = true;
+                }
+            }
+            else if (IsShowingEpisodes && HasSeasons && !TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes[EpisodeBox.SelectedIndex].IsWatched)
             {
                 TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes[EpisodeBox.SelectedIndex].IsWatched = true;
             }
-            else if(IsShowingEpisodes && HasSeasons && Watched)
+            else if (IsShowingEpisodes && HasSeasons && TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes[EpisodeBox.SelectedIndex].IsWatched)
             {
                 TVshowManager.TVshows[TVShowBox.SelectedIndex].Seasons[TVshowManager.SelectedSeason].Episodes[EpisodeBox.SelectedIndex].IsWatched = false;
             }
