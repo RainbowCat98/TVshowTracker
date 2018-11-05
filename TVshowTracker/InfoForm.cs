@@ -24,6 +24,7 @@ namespace TVshowTracker
 
         private void LoadInformation()
         {
+           
             var obj = TVshowManager.TVshows[TVshowManager.SelectedShow];
             InfoName.Text = obj.TVname;
             InfoTags.Text = obj.Tags;

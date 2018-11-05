@@ -89,6 +89,10 @@ namespace TVshowTracker
         private void ShowINFO_Click(object sender, EventArgs e)
         {
             TVshowManager.SelectedShow = TVShowBox.SelectedIndex;
+            if (TVshowManager.SelectedShow < 0)
+            {
+                return;
+            }
             var newform = new InfoForm();
             Hide();
             newform.ShowDialog();

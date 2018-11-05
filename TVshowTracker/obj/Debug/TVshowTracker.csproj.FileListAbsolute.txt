@@ -23,3 +23,16 @@ C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTrac
 C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.exe
 C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.pdb
 C:\Users\Vartotojas\Desktop\Programavimas\C++ projektai\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.InfoForm.resources
+C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\bin\Debug\TVshowTracker.exe.config
+C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\bin\Debug\TVshowTracker.exe
+C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\bin\Debug\TVshowTracker.pdb
+C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.csprojAssemblyReference.cache
+C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.AddEpisodeForm.resources
+C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.AddShowForm.resources
+C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.InfoForm.resources
+C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.MainForm.resources
+C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.Properties.Resources.resources
+C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.csproj.GenerateResource.cache
+C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.csproj.CoreCompileInputs.cache
+C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.exe
+C:\Users\pauli\Desktop\TVshowTracker\TVshowTracker\obj\Debug\TVshowTracker.pdb
