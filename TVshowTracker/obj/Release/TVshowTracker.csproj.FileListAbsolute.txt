@@ -1,0 +1,12 @@
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\bin\Release\TVshowTracker.exe.config
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\bin\Release\TVshowTracker.exe
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\bin\Release\TVshowTracker.pdb
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Release\TVshowTracker.AddEpisodeForm.resources
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Release\TVshowTracker.AddShowForm.resources
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Release\TVshowTracker.InfoForm.resources
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Release\TVshowTracker.MainForm.resources
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Release\TVshowTracker.Properties.Resources.resources
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Release\TVshowTracker.csproj.GenerateResource.cache
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Release\TVshowTracker.csproj.CoreCompileInputs.cache
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Release\TVshowTracker.exe
+D:\Google Drive\Asmeniniai projektai\C#\TVshowTracker\TVshowTracker\obj\Release\TVshowTracker.pdb
